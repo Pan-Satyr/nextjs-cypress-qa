@@ -1,34 +1,75 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next.js QA Automation Project with Cypress
 
-## Getting Started
+This project is a fork of a minimal [Next.js](https://nextjs.org/) app, extended to include **end-to-end automated testing** with [Cypress](https://www.cypress.io/). It is intended as a showcase of my **Quality Assurance** capabilities in modern web applications using automation tooling.
 
-First, run the development server:
+---
+
+## 🔧 Tech Stack
+
+- **Frontend Framework:** Next.js (v15)
+- **Test Framework:** Cypress (v13+)
+- **Language:** JavaScript (ES6+)
+- **Package Manager:** npm
+
+---
+
+## 🧪 Test Coverage (WIP)
+
+| Test Suite   | Status         | Description                          |
+| ------------ | -------------- | ------------------------------------ |
+| `home.cy.js` | ✅ Implemented | Tests homepage rendering and content |
+
+You can find Cypress specs under:  
+`/cypress/e2e/*.cy.js`
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone and Install
+
+```bash
+git clone https://github.com/Pan-Satyr/nextjs-cypress-qa.git
+cd nextjs-cypress-qa
+npm install
+```
+
+### 2. Run the Dev Server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then visit: http://localhost:3000
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### 3. Run Cypress Tests
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```bash
+npx cypress open
+```
 
-## Learn More
+### 4. Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+├── app/ # Next.js pages
+├── cypress/ # Cypress E2E testing folder
+│ ├── e2e/ # Your test specs
+│ ├── fixtures/ # Static test data
+│ ├── support/ # Custom commands
+├── public/ # Static assets
+├── .gitignore
+├── README.md
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Credits
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+This project is based on the original [Next.js Tutorial Repository by Safak](https://github.com/safak/nextjs-tutorial), which accompanies a YouTube series:
 
-## Deploy on Vercel
+> **YouTube Tutorial**: [Next.js Full Tutorial for Beginners | Next.js 13 Full Stack App Using App Router](https://www.youtube.com/watch?v=VE8BkImUciY&list=PLj-4DlPRT48mYFZcTiaC4GEHbi98Y5z0a)  
+> **Author**: Lama Dev — [YouTube Channel](https://www.youtube.com/@LamaDev)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+I have extended the project by integrating **Cypress** and building out **end-to-end QA automation** to showcase my testing capabilities and workflow.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Author
+
+Alonso Ramirez
+Test Analyst | QA Engineer | Automation Learner
+GitHub Profile
