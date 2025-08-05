@@ -26,3 +26,10 @@
 Cypress.Commands.add('getByTestId', (testId, ...args) => {
   return cy.get(`[data-testid="${testId}"]`, ...args);
 });
+
+Cypress.Commands.add('assertLayout', () => {
+  cy.getByTestId('navbar').should('exist');
+  cy.getByTestId('footer').should('exist');
+  cy.getByTestId('footer-text').should('contain.text', '©2023 Lamamia');
+  cy.getByTestId('footer-social').should('exist');
+});

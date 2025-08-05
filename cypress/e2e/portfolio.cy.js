@@ -4,6 +4,7 @@ describe('Portfolio Page renders', () => {
   });
 
   it('renders heading and links', () => {
+    cy.assertLayout();
     cy.getByTestId('portfolio-container').should('exist');
     cy.getByTestId('portfolio-heading').should(
       'contain.text',
@@ -25,16 +26,19 @@ describe('Portfolio Page renders', () => {
   });
 
   it('navigates to illustrations gallery', () => {
+    cy.assertLayout();
     cy.getByTestId('portfolio-link-illustrations').click();
     cy.url().should('include', '/portfolio/illustrations');
   });
 
   it('navigates to websites gallery', () => {
+    cy.assertLayout();
     cy.getByTestId('portfolio-link-websites').click();
     cy.url().should('include', '/portfolio/websites');
   });
 
   it('navigates to application gallery', () => {
+    cy.assertLayout();
     cy.getByTestId('portfolio-link-application').click();
     cy.url().should('include', '/portfolio/application');
   });

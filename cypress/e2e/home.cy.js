@@ -3,7 +3,8 @@ describe('Home Page renders', () => {
     cy.visit('/');
   });
 
-  it('displays homepage content', () => {
+  it('displays homepage content and switches theme', () => {
+    cy.assertLayout();
     cy.getByTestId('home-title').should('contain.text', 'Better design');
     cy.getByTestId('home-description').should('exist');
     cy.getByTestId('home-hero-image').should('be.visible');
@@ -13,6 +14,7 @@ describe('Home Page renders', () => {
   });
 
   it('navigates to portfolio page when CTA is clicked', () => {
+    cy.assertLayout();
     cy.getByTestId('home-cta-button').click();
     cy.url().should('include', '/portfolio');
   });
