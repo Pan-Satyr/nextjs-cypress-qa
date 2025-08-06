@@ -32,23 +32,29 @@ const Contact = () => {
 
     if (Object.keys(newErrors).length === 0) {
       console.log('Form submitted:', formData);
-      // Here you'd typically send data via fetch/axios
     }
   };
 
   return (
-    <div className={styles.container}>
-      <h1 className={styles.title}>Let's Keep in Touch</h1>
+    <div className={styles.container} data-testid="contact-container">
+      <h1 className={styles.title} data-testid="contact-heading">
+        Let's Keep in Touch
+      </h1>
       <div className={styles.content}>
         <div className={styles.imgContainer}>
           <Image
             src="/contact.png"
-            alt=""
+            alt="Contact Illustration"
             fill={true}
             className={styles.image}
+            data-testid="contact-image"
           />
         </div>
-        <form className={styles.form} onSubmit={handleSubmit}>
+        <form
+          className={styles.form}
+          onSubmit={handleSubmit}
+          data-testid="contact-form"
+        >
           <input
             type="text"
             name="name"
@@ -56,8 +62,11 @@ const Contact = () => {
             className={styles.input}
             value={formData.name}
             onChange={handleChange}
+            data-testid="contact-input-name"
           />
-          {errors.name && <span>{errors.name}</span>}
+          {errors.name && (
+            <span data-testid="contact-error-name">{errors.name}</span>
+          )}
 
           <input
             type="text"
@@ -66,8 +75,11 @@ const Contact = () => {
             className={styles.input}
             value={formData.email}
             onChange={handleChange}
+            data-testid="contact-input-email"
           />
-          {errors.email && <span>{errors.email}</span>}
+          {errors.email && (
+            <span data-testid="contact-error-email">{errors.email}</span>
+          )}
 
           <textarea
             name="message"
@@ -77,10 +89,17 @@ const Contact = () => {
             rows="10"
             value={formData.message}
             onChange={handleChange}
+            data-testid="contact-input-message"
           />
-          {errors.message && <span>{errors.message}</span>}
+          {errors.message && (
+            <span data-testid="contact-error-message">{errors.message}</span>
+          )}
 
-          <button type="submit" className={styles.button}>
+          <button
+            type="submit"
+            className={styles.button}
+            data-testid="contact-submit-button"
+          >
             Send
           </button>
         </form>
