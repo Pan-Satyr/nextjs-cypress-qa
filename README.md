@@ -64,9 +64,17 @@ npx cypress open
 
 ### 4. Project Structure
 
-<pre> ```plaintext ├── app/ # Next.js pages ├── cypress/ # Cypress E2E testing folder │ ├── e2e/ # Test specs │ ├── fixtures/ # Static test data │ ├── support/ # Custom commands ├── public/ # Static assets ├── .gitignore ├── README.md ``` </pre>
+```plaintext
+ ├── app/ # Next.js pages
+ ├── cypress/ # Cypress E2E testing folder │
+ ├── e2e/ # Test specs │
+ ├── fixtures/ # Static test data │
+ ├── support/ # Custom commands
+ ├── public/ # Static assets
+ ├── .gitignore
+ ├── README.md
+```
 
 ### Author
 
-Alonso Ramirez
-Test Analyst
+Alonso Ramirez - Test Analyst
