@@ -1,30 +1,44 @@
 # Next.js QA Automation Project with Cypress
 
-This project is a fork of a minimal [Next.js](https://nextjs.org/) app, extended to include **end-to-end automated testing** with [Cypress](https://www.cypress.io/). It is intended as a showcase of my **Quality Assurance** capabilities in modern web applications using automation tooling.
+### Why This Project Exists
+
+The purpose of this repository is to demonstrate my QA automation skills in a modern web application stack.  
+While the application’s original backend functionality (database, authentication) was not fully implemented, I integrated Cypress to:
+
+- Validate UI components and static content
+- Test form validation logic
+- Mock API calls to test dynamic flows like login, registration, and dashboard data
 
 ---
 
-## 🔧 Tech Stack
+### Credits
 
-- **Frontend Framework:** Next.js (v15)
-- **Test Framework:** Cypress (v13+)
-- **Language:** JavaScript (ES6+)
-- **Package Manager:** npm
+The original Next.js app comes from [Next.js Tutorial Repository by Safak](https://github.com/safak/nextjs-tutorial), which accompanies a YouTube series:
+
+> **YouTube Tutorial**: [Next.js Full Tutorial for Beginners | Next.js 13 Full Stack App Using App Router](https://www.youtube.com/watch?v=VE8BkImUciY&list=PLj-4DlPRT48mYFZcTiaC4GEHbi98Y5z0a)  
+> **Author**: Lama Dev — [YouTube Channel](https://www.youtube.com/@LamaDev)
+
+I just extended the project by integrating **Cypress** and building out **end-to-end QA automation** to showcase my testing capabilities and workflow (I did not complete the tutorial of the app, since my intention was just to use it as a base).
+
+## Test Coverage
+
+> **Note on Login and Registration Tests**  
+> The backend for authentication and database persistence is not active in this project.  
+> Login and registration flows are tested using Cypress `cy.intercept()` to mock API calls and simulate expected responses.  
+> This allows validation of UI behavior, form interactions, and redirects without requiring a live backend.
+
+| Test Suite        | Description                                                         |
+| ----------------- | ------------------------------------------------------------------- |
+| `about.cy.js`     | Tests About page rendering, static text, and image description      |
+| `contact.cy.js`   | Tests Contact page form validation (required fields, basic UI flow) |
+| `home.cy.js`      | Tests Home page main sections, layout, and static content           |
+| `login.cy.js`     | Tests Login form flow using mocked backend (NextAuth + post fetch)  |
+| `portfolio.cy.js` | Tests Portfolio page navigation and section rendering               |
+| `register.cy.js`  | Tests Registration form flow using mocked backend API               |
 
 ---
 
-## 🧪 Test Coverage (WIP)
-
-| Test Suite   | Status         | Description                          |
-| ------------ | -------------- | ------------------------------------ |
-| `home.cy.js` | ✅ Implemented | Tests homepage rendering and content |
-
-You can find Cypress specs under:  
-`/cypress/e2e/*.cy.js`
-
----
-
-## 🚀 Getting Started
+## Getting Started
 
 ### 1. Clone and Install
 
@@ -50,26 +64,9 @@ npx cypress open
 
 ### 4. Project Structure
 
-├── app/ # Next.js pages
-├── cypress/ # Cypress E2E testing folder
-│ ├── e2e/ # Your test specs
-│ ├── fixtures/ # Static test data
-│ ├── support/ # Custom commands
-├── public/ # Static assets
-├── .gitignore
-├── README.md
-
-### Credits
-
-This project is based on the original [Next.js Tutorial Repository by Safak](https://github.com/safak/nextjs-tutorial), which accompanies a YouTube series:
-
-> **YouTube Tutorial**: [Next.js Full Tutorial for Beginners | Next.js 13 Full Stack App Using App Router](https://www.youtube.com/watch?v=VE8BkImUciY&list=PLj-4DlPRT48mYFZcTiaC4GEHbi98Y5z0a)  
-> **Author**: Lama Dev — [YouTube Channel](https://www.youtube.com/@LamaDev)
-
-I have extended the project by integrating **Cypress** and building out **end-to-end QA automation** to showcase my testing capabilities and workflow.
+<pre> ```plaintext ├── app/ # Next.js pages ├── cypress/ # Cypress E2E testing folder │ ├── e2e/ # Test specs │ ├── fixtures/ # Static test data │ ├── support/ # Custom commands ├── public/ # Static assets ├── .gitignore ├── README.md ``` </pre>
 
 ### Author
 
 Alonso Ramirez
-Test Analyst | QA Engineer | Automation Learner
-GitHub Profile
+Test Analyst
